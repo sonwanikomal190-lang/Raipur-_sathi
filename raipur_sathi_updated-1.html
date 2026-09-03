@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Raipur Sathi</title>
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:system-ui,"Noto Sans Devanagari",sans-serif;background:#f5f7fb;color:#172033}
+header{background:linear-gradient(135deg,#5b21b6,#7c3aed);color:#fff;padding:26px 16px 22px;border-radius:0 0 25px 25px}
+.wrap{max-width:900px;margin:auto}.brand{font-size:28px;font-weight:800}.tag{margin:4px 0 16px;opacity:.9}
+.search{display:flex;background:#fff;border-radius:14px;padding:5px}.search input{flex:1;border:0;outline:0;padding:12px;font-size:15px}.search button{border:0;background:#f3e8ff;border-radius:10px;padding:0 14px;font-size:20px}
+.voice{width:100%;margin-top:9px;border:0;border-radius:11px;padding:11px;background:#fff;color:#5b21b6;font-weight:700}
+main{padding:18px 14px}.title{font-size:20px;font-weight:800;margin:8px 0 13px}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:11px}
+.card{background:#fff;border:1px solid #edf0f5;border-radius:16px;padding:16px 10px;text-align:center;box-shadow:0 3px 12px #1720330d}.icon{font-size:29px}.card b{display:block;margin-top:6px}
+.section{display:none;margin-top:22px}.section.active{display:block}.items{display:grid;gap:10px}.item{background:#fff;border-radius:14px;padding:14px;display:flex;gap:11px;align-items:center}.item .ico{font-size:27px}.item strong{display:block}.muted{font-size:13px;color:#6b7280;margin-top:3px}.actions{margin-left:auto;display:flex;gap:6px}.actions a{background:#ede9fe;color:#5b21b6;padding:8px 9px;border-radius:9px;text-decoration:none;font-size:13px;font-weight:700;white-space:nowrap}
+.banner{margin-top:20px;background:#111827;color:#fff;border-radius:18px;padding:18px}.banner h3{margin:0 0 6px}.banner p{color:#d1d5db;margin:0 0 11px}.banner button{border:0;border-radius:10px;padding:10px 14px;font-weight:700}
+footer{text-align:center;padding:25px;color:#6b7280;font-size:13px}@media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="brand">📍 Raipur Sathi</div><div class="tag">रायपुर की हर जरूरी जानकारी, एक ही जगह।</div>
+<div class="search"><input id="q" placeholder="क्या चाहिए? अस्पताल, होटल, दुकान..."><button onclick="search()">🔍</button></div>
+<button class="voice" onclick="voiceSearch()">🎤 बोलकर खोजें</button>
+</div></header>
+<main class="wrap">
+<div class="title">आपको क्या चाहिए?</div>
+<div class="grid">
+<div class="card" onclick="show('jobs')"><div class="icon">💼</div><b>नौकरी</b></div>
+<div class="card" onclick="show('hospitals')"><div class="icon">🏥</div><b>अस्पताल</b></div>
+<div class="card" onclick="show('shops')"><div class="icon">🛍️</div><b>दुकानें</b></div>
+<div class="card" onclick="show('food')"><div class="icon">🍽️</div><b>होटल/रेस्टोरेंट</b></div>
+<div class="card" onclick="alert('मकान/कमरा सुविधा अगले चरण में जोड़ी जाएगी।')"><div class="icon">🏠</div><b>मकान/कमरा</b></div>
+<div class="card" onclick="alert('ऑटो/कैब सुविधा अगले चरण में जोड़ी जाएगी।')"><div class="icon">🛺</div><b>ऑटो/कैब</b></div>
+<div class="card" onclick="alert('सरकारी जानकारी का सेक्शन अगले चरण में जोड़ा जाएगा।')"><div class="icon">🏛️</div><b>सरकारी जानकारी</b></div>
+<div class="card" onclick="alert('लोकल खबरों का सेक्शन अगले चरण में जोड़ा जाएगा।')"><div class="icon">📰</div><b>लोकल खबरें</b></div>
+</div>
+
+<section id="hospitals" class="section"><div class="title">🏥 रायपुर के अस्पताल</div><div class="items">
+<div class="item"><div class="ico">🏥</div><div><strong>AIIMS Raipur</strong><div class="muted">तातिबंध, GE Road · सरकारी सूची में दर्ज</div></div><div class="actions"><a href="tel:07712572240">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=AIIMS+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🏥</div><div><strong>Dr. Bhimrao Ambedkar Memorial Hospital</strong><div class="muted">Jail Road, Raipur</div></div><div class="actions"><a href="tel:07712890113">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Dr+Bhimrao+Ambedkar+Memorial+Hospital+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🏥</div><div><strong>Shree Ram Multispeciality Hospital</strong><div class="muted">Gondwara Chowk, Gudhiyari</div></div><div class="actions"><a href="tel:+917714343161">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Shree+Ram+Multispeciality+Hospital+Gudhiyari+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🏥</div><div><strong>Shree Kalyan Multispeciality Hospital</strong><div class="muted">Fafadih Road</div></div><div class="actions"><a href="tel:+918109633244">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Shree+Kalyan+Multispeciality+Hospital+Raipur">मैप</a></div></div>
+</div></section>
+
+<section id="shops" class="section"><div class="title">🛍️ आसपास की दुकानें</div><div class="items">
+<div class="item"><div class="ico">👟</div><div><strong>Vikas Shoe Collection</strong><div class="muted">New Mangal Bazar, Gudhiyari</div></div><div class="actions"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Vikas+Shoe+Collection+Gudhiyari+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🛒</div><div><strong>Ravi Kirana Store</strong><div class="muted">Satnami Para, Gudhiyari</div></div><div class="actions"><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ravi+Kirana+Store+Gudhiyari+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🪑</div><div><strong>Roshan Furniture</strong><div class="muted">Osho Bhawan, Shrinagar, Gudhiyari</div></div><div class="actions"><a href="tel:+918005990325">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Roshan+Furniture+Shrinagar+Gudhiyari+Raipur">मैप</a></div></div>
+</div></section>
+
+<section id="food" class="section"><div class="title">🍽️ रेस्टोरेंट</div><div class="items">
+<div class="item"><div class="ico">🍛</div><div><strong>Ram Ashray - Gujarati Restaurant</strong><div class="muted">Nahar Para, Station Road</div></div><div class="actions"><a href="tel:+917974019920">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Ram+Ashray+Gujarati+Restaurant+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🍽️</div><div><strong>Anise Pure Veg Restaurant</strong><div class="muted">Fafadih, Pilla Building के पास</div></div><div class="actions"><a href="tel:+918817970977">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Anise+Pure+Veg+Restaurant+Fafadih+Raipur">मैप</a></div></div>
+<div class="item"><div class="ico">🍔</div><div><strong>Lemon Tadka</strong><div class="muted">Railway Station, Hotel Le Roi Complex</div></div><div class="actions"><a href="tel:+917773013035">कॉल</a><a target="_blank" href="https://www.google.com/maps/search/?api=1&query=Lemon+Tadka+Raipur+Railway+Station">मैप</a></div></div>
+</div></section>
+
+<section id="jobs" class="section"><div class="title">💼 नौकरी</div><div class="item">अभी स्थानीय verified नौकरी listings जोड़नी बाकी हैं।</div></section>
+
+<div class="banner"><h3>📢 अपना बिजनेस जोड़ें</h3><p>दुकान, होटल या सेवा को Raipur Sathi पर जोड़ने की सुविधा जल्द।</p><button onclick="alert('बिजनेस जोड़ने का फॉर्म अगले चरण में बनाया जाएगा।')">मुफ्त में जोड़ें</button></div>
+</main><footer>© 2026 Raipur Sathi · जानकारी को समय-समय पर जाँचें</footer>
+<script>
+function show(id){document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));document.getElementById(id).classList.add('active');document.getElementById(id).scrollIntoView({behavior:'smooth'})}
+function search(){let q=document.getElementById('q').value.trim();if(!q){alert('जैसे “अस्पताल”, “दुकान” या “रेस्टोरेंट” लिखें।');return}let x=q.toLowerCase();if(x.includes('अस्पताल')||x.includes('hospital'))show('hospitals');else if(x.includes('दुकान')||x.includes('shop'))show('shops');else if(x.includes('होटल')||x.includes('रेस्टोरेंट')||x.includes('restaurant'))show('food');else if(x.includes('नौकरी')||x.includes('job'))show('jobs');else alert('इस खोज की जानकारी अभी जोड़ी जा रही है।')}
+function voiceSearch(){if(!('webkitSpeechRecognition'in window)){alert('इस ब्राउज़र में voice search उपलब्ध नहीं है।');return}let r=new webkitSpeechRecognition();r.lang='hi-IN';r.start();r.onresult=e=>{document.getElementById('q').value=e.results[0][0].transcript;search()}}
+</script>
+</body></html>
